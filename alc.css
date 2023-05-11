@@ -1,0 +1,112 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+.cube{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg);
+    animation: animate 5.5s linear infinite;
+}
+.cube div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+   
+}
+@keyframes animate{
+    0%{
+        transform: rotateX(-30deg) rotateY(0deg);  
+    }
+    100%{
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+}
+.cube div span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#151515, rgb(194, 25, 194));
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+}
+
+.top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: #222;
+    transform: rotateX(90deg) translateZ(150px);
+}
+.top::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: rgb(184, 22, 184);
+    transform: translateZ(-380px);
+    filter: blur(20px);
+    box-shadow: 0 0 120px rgb(224, 5, 224),
+    0 0 200px rgb(221, 10, 232),
+    0 0 300px rgb(226, 10, 241),
+    0 0 400px rgb(228, 19, 251),
+    0 0 500px rgb(213, 2, 241);
+}
+h2{
+    color: #fff;
+    background-color: transparent;
+    position: relative;
+    margin: 0;
+    font-size: 3em;
+    font-weight: 900;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    padding-left: 120px;
+}
+h2:before{
+    content: '';
+    position: absolute;
+    left: 120%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(90deg,transparent 0%,#000 5%,#000 100%);
+    animation: anim 5.5s linear  infinite forwards;
+    animation-delay: 0s;
+    
+}
+@keyframes anim {
+    0%{
+        left: 120%;
+    }
+    100%{
+        left: 0%;
+    }
+    
+}
+h2 span{
+    color: #ff022c;
+}
+
